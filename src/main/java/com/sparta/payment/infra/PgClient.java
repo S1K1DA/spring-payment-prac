@@ -39,7 +39,7 @@ public class PgClient {
 
         log.info("🌐 PG사 응답 도착 완료! (테스트용 데이터 반환)");
 
-        // 프론트엔드 실습 코드의 금액(100원)과 맞춘 가짜 정상 응답
-        return new PgPaymentData(impUid, 100L, "paid");
+        // 프론트엔드 실습 코드의 금액(1000원)과 맞춘 가짜 정상 응답
+        return new PgPaymentData(impUid, 1000L, "paid");
     }
 }

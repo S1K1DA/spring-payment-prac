@@ -52,7 +52,7 @@
                 channelKey: "channel-key-61b0d130-cd04-4031-8ea5-b73bf390479f", // 은식 채널키 수정함
                 paymentId: readyData.merchantUid,  // 백엔드에서 만든 고유 주문 번호
                 orderName: readyData.orderName,
-                totalAmount: readyData.amount,
+                totalAmount: 1000,             // 프론트에서 1000원으로 조작
                 currency: "CURRENCY_KRW",
                 payMethod: "CARD",
                 customer: {
@@ -77,11 +77,10 @@
             alert("✅ 카드 결제가 승인되었습니다!\n(하지만 아직 우리 서버에 Confirm 요청을 보내지 않았습니다. DB를 확인해 보세요!)");
             payBtn.innerText = "승인 완료 (Confirm 대기)";
 
-            /*
+
             // --------------------------------------------------------------------
             // 👨‍🏫 [실습 2단계] 백엔드 Confirm API 구현 후 아래 주석을 해제하세요!
-            // V2 응답 스펙에 맞게 transactionId와 paymentId를 넘깁니다.
-            // --------------------------------------------------------------------
+            //V2 응답 스펙에 맞게 transactionId와 paymentId를 넘깁니다.
             const confirmResponse = await fetch('/api/payments/confirm', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -99,7 +98,6 @@
                 payBtn.disabled = false;
                 payBtn.innerText = "신용카드 결제하기 (KG이니시스)";
             }
-            */
 
         } catch (error) {
             console.error("결제 프로세스 에러:", error);
